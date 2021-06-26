@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, Field } from 'react-final-form'
 import { useDispatch } from "react-redux";
-import {authenticateAction} from "../redux/sagas/auth"
+import {authenticateAction} from "../../redux/sagas/auth"
+import "./LoginForm.css"
 
 interface ISubmitValues {
    login: string;
@@ -20,11 +21,13 @@ export const LoginForm = () => {
 
 
    return (
-      <Form
+      <div className="container">
+         <span className="top-text">API-консолька</span>
+         <Form
          onSubmit={onSubmit}
          render={({ handleSubmit, form, submitting, pristine, values }) => (
             <form onSubmit={handleSubmit}>
-               <div>
+               <div className="field-container">
                   <label>Логин</label>
                   <Field
                      name="login"
@@ -32,15 +35,18 @@ export const LoginForm = () => {
                      type="text"
                   />
                </div>
-               <div>
-                  <label>Саблогин</label>
+               <div className="field-container">
+                  <div className="sublogin-label-span">
+                     <label>Сублогин</label>
+                     <span className="sublogin-optional-span">Опционально</span>
+                  </div>
                   <Field
                      name="sublogin"
                      component="input"
                      type="text"
                   />
                </div>
-               <div>
+               <div className="field-container">
                   <label>Пароль</label>
                   <Field
                      name="password"
@@ -54,6 +60,7 @@ export const LoginForm = () => {
             </form>
          )}
       />
+      </div>
    )
 }
 
