@@ -6,3 +6,12 @@
   align-items: center;
   justify-content: center;
 }
+
+#logo {
+  margin-bottom: 20px;
+}
+
+#github-link {
+  margin-top: 20px;
+  color: #999999;
+}

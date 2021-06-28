@@ -49,10 +49,14 @@ input:invalid {
   box-shadow: 0px 0px 5px rgba(207, 44, 0, 0.5);
 }
 
+input:focus {
+  outline: none;
+}
+
 input[type="password"] {
   -webkit-text-stroke-width: 0.4em;
   letter-spacing: 0.3em;
-  text-indent: 2px;
+  text-indent: 3px;
 }
 
 button[type="submit"] {
