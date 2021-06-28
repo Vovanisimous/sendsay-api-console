@@ -1,0 +1,26 @@
+.error-container {
+  height: 40px;
+  background-color: rgba(207, 44, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  padding: 12px 15px;
+}
+
+.error-texts {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  color: #cf2c00;
+}
+
+.meh {
+  height: 50px;
+}
+
+#first-error-text {
+  font-size: 18px;
+}
+
+#second-error-text {
+  font-size: 12px;
+}

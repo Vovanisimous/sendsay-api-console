@@ -20,4 +20,5 @@ middleware: [...getDefaultMiddleware({ thunk: false, serializableCheck: false })
 
 sagaMiddleware.run(watcherSaga);
 
+export type RootState = ReturnType<typeof store.getState>
 export default store;

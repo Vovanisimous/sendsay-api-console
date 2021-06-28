@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import {all, put, call, takeLatest} from 'redux-saga/effects';
 import api from '../../helpers/sendsay';
-import {setLoading, setUser, removeUser} from '../features/auth/authSlice';
+import {setLoading, setUser, removeUser, setError} from '../features/auth/authSlice';
 
 interface IAuthenticate {
    type: string;
@@ -33,6 +33,7 @@ function* authenticationCheck() {
 function* authenticate({payload}: IAuthenticate){
    try {
       yield put(setLoading())
+      yield put(setError({error: ''}))
 
       yield api.sendsay
          .login({
@@ -52,6 +53,10 @@ function* authenticate({payload}: IAuthenticate){
       );
    }catch (err) {
       yield call(logout)
+      const {request, ...error} = err
+      yield put(
+         setError({error: JSON.stringify(error)})
+      )
       console.log('err', err);
    }
 }

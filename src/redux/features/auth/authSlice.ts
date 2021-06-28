@@ -5,6 +5,7 @@ interface IInitialState {
    session: string;
    login: string;
    sublogin: string;
+   error: string;
 }
 
 export interface ISetUserAction {
@@ -16,11 +17,19 @@ export interface ISetUserAction {
    }
 }
 
+export interface ISetErrorAction {
+   type: string;
+   payload: {
+      error: string;
+   }
+}
+
 const initialState: IInitialState = {
    session: '',
    login: '',
    sublogin: '',
-   loading: false
+   loading: false,
+   error: '',
 }
 
 const authSlice = createSlice({
@@ -29,6 +38,9 @@ const authSlice = createSlice({
    reducers: {
       setLoading: (state) => {
          state.loading = true
+      },
+      setError: (state, action: ISetErrorAction) => {
+         state.error = action.payload.error
       },
       setUser: (state, action: ISetUserAction) => {
          state.loading = false;
@@ -45,6 +57,6 @@ const authSlice = createSlice({
    }
 })
 
-export const {setLoading, setUser, removeUser} = authSlice.actions;
+export const {setLoading, setUser, removeUser, setError} = authSlice.actions;
 
 export default authSlice.reducer;
