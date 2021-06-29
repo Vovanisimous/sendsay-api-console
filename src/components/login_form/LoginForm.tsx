@@ -34,7 +34,7 @@ export const LoginForm = () => {
     const regex =
       input === "login"
         ? /^[a-z0-9@._-]+$/i
-        : /^[~`!@#$%^&*()_+=[\]\\{}|;':",.\/<>?a-zA-Z0-9-]+$/;
+        : /^[~`!@#$%^&*()_+=[\]\\{}|;':",./<>?a-zA-Z0-9-]+$/;
 
     if (!value || !regex.test(value)) {
       loginField && loginField.setCustomValidity("123");

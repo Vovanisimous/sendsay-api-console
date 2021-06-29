@@ -1,0 +1,17 @@
+#header-container {
+  width: 100vw;
+  background: #f6f6f6;
+}
+
+#first-row-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
