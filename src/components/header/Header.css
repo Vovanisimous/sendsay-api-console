@@ -10,6 +10,23 @@
   padding: 10px 15px;
 }
 
+#second-row-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 15px;
+  height: 30px;
+  gap: 10px;
+  overflow-x: visible;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#second-row-container::-webkit-scrollbar {
+  display: none;
+}
+
 .info-container {
   display: flex;
   justify-content: center;

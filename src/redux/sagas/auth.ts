@@ -26,7 +26,7 @@ export const authenticateAction =
   createAction<IAuthParams>("auth/authenticate");
 export const logoutAction = createAction("auth/logout");
 
-function* authenticationCheck(): Generator<void | any> {
+function* authenticationCheck(): any {
   try {
     const pongResponse: any = yield api.sendsay.request({
       action: "pong",
@@ -75,7 +75,7 @@ function* authenticate({ payload }: IAuthenticate) {
 
 function* logout() {
   yield put(removeUser());
-  document.cookie = "";
+  api.sendsay.setSession("");
 }
 
 export default function* root() {

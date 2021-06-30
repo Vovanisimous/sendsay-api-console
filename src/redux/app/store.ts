@@ -5,12 +5,14 @@ import {
 } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import authSlice from "../features/auth/authSlice";
+import requestHistorySlice from "../features/request_history/requestHistorySlice";
 import watcherSaga from "../sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const reducer = combineReducers({
-   auth: authSlice
+   auth: authSlice,
+   requestHistory: requestHistorySlice
 });
 
 const store = configureStore({

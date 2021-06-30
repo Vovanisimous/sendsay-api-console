@@ -22,7 +22,7 @@ export const LoginForm = () => {
   );
 
   const onSubmit = async (values: ISubmitValues) => {
-    dispatch(authenticateAction(values));
+    await dispatch(authenticateAction(values));
   };
 
   const onValidateLogin = (

@@ -1,30 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface IInitialState {
-   loading: boolean;
-   session: string;
-   login: string;
-   sublogin: string;
-   error: string;
-}
-
-export interface ISetUserAction {
-   type: string;
-   payload: {
-      session: string;
-      login: string;
-      sublogin: string;
-   }
-}
-
-export interface ISetErrorAction {
-   type: string;
-   payload: {
-      error: string;
-   }
-}
-
-const initialState: IInitialState = {
+const initialState = {
    session: '',
    login: '',
    sublogin: '',
@@ -39,10 +15,10 @@ const authSlice = createSlice({
       setLoading: (state) => {
          state.loading = true
       },
-      setError: (state, action: ISetErrorAction) => {
+      setError: (state, action) => {
          state.error = action.payload.error
       },
-      setUser: (state, action: ISetUserAction) => {
+      setUser: (state, action) => {
          state.loading = false;
          state.session = action.payload.session;
          state.login = action.payload.login;
